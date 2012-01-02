@@ -1,6 +1,6 @@
 ﻿# Networking for Web Devs
 
-## Domain ideas
+## Domain Ideas
 
 networkingforwebdevs.com
 
@@ -14,9 +14,9 @@ Writing style:
 * something you read on its own like a short book (separate sections, pages, chapters, etc though)
 * not something you'd use as a reference so much
 
-Vendor agnostic (eg, it’ll tell you about A records, not how to create them in the Windows DNS MMC span-in)
+Vendor agnostic (eg, we’ll tell you about A records, but not how to create them in the Windows DNS MMC span-in)
 
-Only enough implementation detail to explain how it works (eg, I wouldn't say anything about DNS generally running on UDP)
+Only enough implementation detail to explain how it works (eg, we wouldn't say anything about DNS generally running on UDP)
 
 ## Topics
 
@@ -73,6 +73,6 @@ Out of scope:
 
 * [Tatham Oddie](http://tath.am)
 
-## How to contribute
+## How to Contribute
 
 [Fork it](http://hg.tath.am/nfwd).

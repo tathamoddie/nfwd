@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.Configuration
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -11,5 +12,10 @@
 
 <body>
     @RenderBody()
+
+    <footer>
+        @{ var version = ConfigurationManager.AppSettings["appharbor.commit_id"]; }
+        Version <a href="http://hg.tath.am/nfwd/src/@version">@version</a>.
+    </footer>
 </body>
 </html>

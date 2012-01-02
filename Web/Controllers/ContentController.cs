@@ -13,7 +13,7 @@ namespace Web.Controllers
             if (appPath == null)
                 throw new InvalidOperationException("The app is being hosted outside of an ASP.NET context.");
 
-            var contentPath = Path.Combine(appPath, path ?? string.Empty);
+            var contentPath = Path.Combine(appPath, "Docs", path ?? string.Empty);
 
             var filePath = contentPath + ".md";
             if (IOFile.Exists(filePath))

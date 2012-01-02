@@ -36,6 +36,7 @@ Only enough implementation detail to explain how it works (eg, we wouldn't say a
     * NS records
     * SOA and TTL
     * Recursion
+    * Reserved TLDs ([RFC 2606](http://tools.ietf.org/rfc/rfc2606.txt))
 * IPv4
     * Subnet masks and gateways
     * Pro topic / sidebar: your routing table

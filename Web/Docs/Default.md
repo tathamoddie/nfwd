@@ -12,7 +12,7 @@ networkingforwebdevs.com
 
 Writing style:
 
-* like hginit.com
+* like [hginit.com](http://hginit.com)
 * light-ish reading, easy words
 * building story line
 * something you read on its own like a short book (separate sections, pages, chapters, etc though)

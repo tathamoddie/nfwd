@@ -22,9 +22,9 @@ namespace Web
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                "Default", // Route name
-                "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+                "MarkdownContent",
+                "{*path}",
+                new { controller = "Content", action = "Render" } // Parameter defaults
             );
 
         }

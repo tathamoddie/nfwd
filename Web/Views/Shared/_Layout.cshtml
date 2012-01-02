@@ -9,8 +9,9 @@
         <script src="@Url.Content("~/Scripts/modernizr-2.0.6-development-only.js")" type="text/javascript"></script>
     </head>
     <body>
-        <h1>Networking for Web Devs</h1>
-        @RenderBody()
+        <article>
+            @RenderBody()
+        </article>
         @{ Html.RenderAction("Footer", "Layout", new { childAction = "true" }); }
     </body>
 </html>

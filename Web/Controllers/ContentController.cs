@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using MarkdownSharp;
@@ -9,6 +10,8 @@ namespace Web.Controllers
 {
     public class ContentController : Controller
     {
+        static readonly Regex Heading1Regex = new Regex(@"(?m:(?<=^\#\s).+(?=$))");
+
         public ActionResult Page(string path)
         {
             var filePath = ResolveFilePath(path);
@@ -20,6 +23,9 @@ namespace Web.Controllers
 
             var fileContent = IOFile.ReadAllText(filePath);
             ViewBag.PageContent = new HtmlString(new Markdown().Transform(fileContent));
+
+            var heading1 = Heading1Regex.Match(fileContent);
+            ViewBag.Title = heading1.Success ? heading1.Value : "";
 
             return View();
         }

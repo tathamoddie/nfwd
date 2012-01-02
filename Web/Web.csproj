@@ -103,6 +103,7 @@
     <Compile Include="Controllers\ContentController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\LayoutController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -148,6 +149,9 @@
     <Content Include="Docs\Bar.md" />
     <Content Include="Docs\Default.md" />
     <Content Include="Docs\Test\Foo.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Layout\Footer.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

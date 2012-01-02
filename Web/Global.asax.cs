@@ -22,11 +22,17 @@ namespace Web
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                "ChildAction",
+                "child-action/{controller}/{action}",
+                new { },
+                new { childAction = "true" }
+            );
+
+            routes.MapRoute(
                 "MarkdownContent",
                 "{*path}",
                 new { controller = "Content", action = "Page" } // Parameter defaults
             );
-
         }
 
         protected void Application_Start()

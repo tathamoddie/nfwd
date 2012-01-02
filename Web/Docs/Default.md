@@ -1,5 +1,9 @@
 ﻿# Networking for Web Devs
 
+In this crazy world of cloud computing, developers are dealing with more and more infrastructure tasks. You create a GitHub repo, spin up a Heroku app, push to it, then ... DNS? Huh? What if you want to support URLs like http://*username*.example.com on Windows Azure?
+
+The goal of this site is to give developers enough infrastrucute knowledge to feel comfortable in this new era, without making them sys-admins.
+
 ## Domain Ideas
 
 networkingforwebdevs.com
@@ -8,7 +12,7 @@ networkingforwebdevs.com
 
 Writing style:
 
-* like hginit.com
+* like [hginit.com](http://hginit.com)
 * light-ish reading, easy words
 * building story line
 * something you read on its own like a short book (separate sections, pages, chapters, etc though)

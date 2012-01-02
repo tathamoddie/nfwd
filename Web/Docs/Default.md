@@ -1,4 +1,4 @@
-﻿# "Networking for Web Devs", by Tatham Oddie
+﻿# Networking for Web Devs
 
 ## Domain ideas
 
@@ -67,6 +67,10 @@ Out of scope:
 * TCP internals (SYN, ACK, RST)
 * BGP
 * ARP
+
+## Contributors
+
+* [Tatham Oddie](http://tath.am)
 
 ## How to contribute
 

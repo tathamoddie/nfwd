@@ -122,7 +122,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
-    <Content Include="Views\Home\Index.cshtml">
+    <Content Include="Views\Content\Page.cshtml">
       <SubType>Code</SubType>
     </Content>
     <Content Include="Web.config" />

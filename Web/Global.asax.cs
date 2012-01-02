@@ -24,7 +24,7 @@ namespace Web
             routes.MapRoute(
                 "MarkdownContent",
                 "{*path}",
-                new { controller = "Content", action = "Render" } // Parameter defaults
+                new { controller = "Content", action = "Page" } // Parameter defaults
             );
 
         }

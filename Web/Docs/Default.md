@@ -67,8 +67,8 @@ Only enough implementation detail to explain how it works (eg, we wouldn't say a
 Out of scope:
 
 * DNS
-* glue records
-* SRV records
+    * glue records
+    * SRV records
 * TCP internals (SYN, ACK, RST)
 * BGP
 * ARP

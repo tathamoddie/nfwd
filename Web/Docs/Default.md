@@ -25,7 +25,7 @@ Only enough implementation detail to explain how it works (eg, we wouldn't say a
     * What DNS does not do (names to port numbers)
     * A and AAAA records
     * Multiple A records
-    * Round robin
+        * Round robin
     * Wildcards
     * CNAME records
     * MX records

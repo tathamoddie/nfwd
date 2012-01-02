@@ -75,4 +75,4 @@ Out of scope:
 
 ## How to Contribute
 
-[Fork it](http://hg.tath.am/nfwd).
+[Fork it](https://github.com/tathamoddie/nfwd).

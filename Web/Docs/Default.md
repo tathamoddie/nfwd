@@ -75,4 +75,4 @@ Out of scope:
 
 ## How to Contribute
 
-[Fork it](https://github.com/tathamoddie/nfwd).
+Click the _Edit this page_ link at the top of any page, or [fork the entire repository](https://github.com/tathamoddie/nfwd).

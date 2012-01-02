@@ -7,6 +7,7 @@ networkingforwebdevs.com
 ## Content Guidelines
 
 Writing style:
+
 * like hginit.com
 * light-ish reading, easy words
 * building story line

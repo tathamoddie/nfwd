@@ -1,6 +1,4 @@
-﻿# Networking for Web Devs
-
-## Domain Ideas
+﻿## Domain Ideas
 
 networkingforwebdevs.com
 

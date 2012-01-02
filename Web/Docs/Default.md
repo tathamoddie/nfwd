@@ -32,13 +32,13 @@ Only enough implementation detail to explain how it works (eg, we wouldn't say a
     * NS records
     * SOA and TTL
     * Recursion
-* DHCP
-    * What it does, no more
 * IPv4
     * Subnet masks and gateways
     * Pro topic / sidebar: your routing table
 * IPv6
     * What it means for you
+* DHCP
+    * What it does, no more
 * HTTP
     * Bindings apply to a port, on an IP, on an adapter
     * How host headers work

@@ -14,8 +14,13 @@
         @RenderBody()
 
         <footer>
-            @{ var version = ConfigurationManager.AppSettings["appharbor.commit_id"]; }
-            Version <a href="http://hg.tath.am/nfwd/src/@version">@version</a>.
+            <p rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/au/">
+                This <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" rel="dct:type">work</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/au/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Australia License</a>.
+            </p>
+            <p>
+                @{ var version = ConfigurationManager.AppSettings["appharbor.commit_id"]; }
+                Version <a href="http://hg.tath.am/nfwd/src/@version">@version</a>.
+            </p>
         </footer>
     </body>
 </html>

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Configuration;
-using System.Globalization;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Web;
@@ -30,8 +28,7 @@ namespace Web.Controllers
             var heading1 = Heading1Regex.Match(fileContent);
             ViewBag.Title = heading1.Success ? heading1.Value : "";
 
-            var commitId = ConfigurationManager.AppSettings["appharbor.commit_id"];
-            ViewBag.GitHubEditLink = ResolveGitHubEditLink(docsFolderPath, filePath, commitId);
+            ViewBag.GitHubEditLink = ResolveGitHubEditLink(docsFolderPath, filePath);
 
             return View();
         }
@@ -67,13 +64,13 @@ namespace Web.Controllers
             return docsFolderPath;
         }
 
-        static string ResolveGitHubEditLink(string docsFolderPath, string filePath, string commitId)
+        static string ResolveGitHubEditLink(string docsFolderPath, string filePath)
         {
             var docs = new Uri(docsFolderPath);
             var file = new Uri(filePath);
             var relativeFileUri = docs.MakeRelativeUri(file);
 
-            return string.Format("https://github.com/tathamoddie/nfwd/edit/{0}/Web/Docs/{1}", commitId, relativeFileUri.OriginalString);
+            return string.Format("https://github.com/tathamoddie/nfwd/edit/master/Web/Docs/{0}", relativeFileUri.OriginalString);
         }
     }
 }

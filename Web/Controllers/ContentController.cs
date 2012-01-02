@@ -16,6 +16,8 @@ namespace Web.Controllers
             if (filePath == null)
                 return HttpNotFound();
 
+            Response.AddHeader("X-File-Path", filePath);
+
             var fileContent = IOFile.ReadAllText(filePath);
             ViewBag.PageContent = new HtmlString(new Markdown().Transform(fileContent));
 
@@ -29,6 +31,7 @@ namespace Web.Controllers
                 throw new InvalidOperationException("The app is being hosted outside of an ASP.NET context.");
 
             var contentPath = Path.Combine(appPath, "Docs", path ?? string.Empty);
+            Response.AddHeader("X-Content-Path", contentPath);
 
             var filePath = contentPath + ".md";
             if (IOFile.Exists(filePath))

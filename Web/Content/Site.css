@@ -13,6 +13,18 @@ section {
     display: block;
 }
 
+code {
+    font: 12px 'Bitstream Vera Sans Mono','Courier',monospace;
+    margin: 0 2px;
+    padding: 2px 5px;
+    white-space: nowrap;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
 footer {
     border-top: solid 1px #ddd;
     margin: 2em 0 0 0;

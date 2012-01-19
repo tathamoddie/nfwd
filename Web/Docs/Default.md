@@ -1,4 +1,4 @@
-﻿# Networking for Web Devs
+# Networking for Web Devs
 
 In this crazy world of cloud computing, developers are dealing with more and more infrastructure tasks. You create a GitHub repo, spin up a Heroku app, push to it, then ... DNS? Huh? What if you want to support URLs like http://*username*.example.com on Windows Azure?
 
@@ -24,7 +24,7 @@ Only enough implementation detail to explain how it works (eg, we wouldn't say a
 
 ## Topics
 
-* DNS
+* [DNS](dns)
     * What DNS does (names to IPs)
     * What DNS does not do (names to port numbers)
     * A and AAAA records

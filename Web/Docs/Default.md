@@ -64,6 +64,10 @@ Only enough implementation detail to explain how it works (eg, we wouldn't say a
     * Private vs public key and PKI in general
     * HTTPS limitations of one cert per IP+Port unless you’re lucky to have Server Name Indication support on server and client
     * Wildcard certs and Subject Name Alternatives to work around IP+Port limits
+ * Useful recipes
+     * One IP, multiple sites
+     * One site, multiple host names
+     * One server, multiple SSL sites
 
 Out of scope:
 

@@ -4,6 +4,8 @@ body
     font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
     color: #232323;
     background-color: #fff;
+    max-width: 60em;
+    margin: 20px auto;
 }
 
 header,

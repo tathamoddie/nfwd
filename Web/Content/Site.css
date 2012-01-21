@@ -1,3 +1,7 @@
+html {
+    padding: 0 20px;
+}
+
 body
 {
     font-size: .85em;
@@ -44,6 +48,35 @@ pre {
         border: none;
         background: transparent;
     }
+
+.page-content h1, h2, h3 {
+    clear: left;
+}
+
+.page-content aside {
+    float: left;
+    max-width: 20em;
+    padding: 5px;
+    margin: 0 20px 20px 0;
+    border: 1px solid #aaf;
+    background-color: #f0f0ff;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    opacity: 0.4;
+}
+
+.page-content aside:hover {
+    opacity: 1.0;
+}
+
+@media (max-width: 40em) {
+    .page-content aside {
+        margin-right: 0;
+        width: auto;
+        max-width: none;
+    }
+}
 
 footer {
     border-top: solid 1px #ddd;

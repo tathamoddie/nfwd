@@ -79,7 +79,7 @@ In this case, DNS is telling us that `longitude.tath.am` is actually `longitude.
 
 The big advantage here is that when Heroku decide to change the IP address for my app, everything will still work. If I used an A record instead, I'd be taking a bet against Heroku's infrastructure ever changing.
 
-It's not all peachy though; there are some major restrictions applied to CNAME records. When a CNAME is defined, it must be the only record for that hostname. Because there are certain other records which are required at the root of a zone, CNAMEs are effectively banned there. This means you could CNAME `www.example.com` to `example.heroku.com`, but not `example.com` itself.
+It's not all peachy though; there's a major restriction applied to CNAME records: they must be the only record for that hostname. Because there are certain other records which are required at the root of a zone, CNAMEs are effectively banned there. This means you could CNAME `www.example.com` to `example.heroku.com`, but not `example.com` itself.
 
 For this reason, services like Heroku and AppHarbor also publish a set of known IPs which are unlikely to change.
 

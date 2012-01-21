@@ -64,6 +64,9 @@ pre {
     -webkit-border-radius: 3px;
     border-radius: 3px;
     opacity: 0.4;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    transition: opacity 0.5s;
 }
 
 .page-content aside:hover {
@@ -75,6 +78,7 @@ pre {
         margin-right: 0;
         width: auto;
         max-width: none;
+        opacity: 1.0;
     }
 }
 

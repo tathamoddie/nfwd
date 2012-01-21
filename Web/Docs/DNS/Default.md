@@ -32,9 +32,9 @@ When you type `github.com` into your browser, it uses a similar process to deter
 
 ## Record Types
 
-In our first query, we retrieved something called an *A record*. This is the simplest record of DNS, allowing us to define an address for a hostname.
+So far, we've only retrieved something called an *A record*. This is the simplest record of DNS, allowing us to define an address for a hostname. That's pretty much it for mastering the idea of DNS-as-a-phonebook, so lets look a bit deeper: DNS doesn't always return addresses.
 
-You've now mastered the idea of DNS-as-a-phonebook, so lets look a bit deeper: DNS doesn't always return addresses. There are a number of different record types, each with a defined structure.
+There are a number of different record types, each with a defined structure.
 
 ### Mail Exchangers (MX)
 
@@ -81,7 +81,9 @@ The big advantage here is that when Heroku decide to change the IP address for m
 
 It's not all peachy though; there are some major restrictions applied to CNAME records. When a CNAME is defined, it must be the only record for that hostname. Because there are certain other records which are required at the root of a zone, CNAMEs are effectively banned there. This means you could CNAME `www.example.com` to `example.heroku.com`, but not `example.com` itself.
 
-For this reason, services like Heroku and AppHarbor also publish a set of known IPs which are unlikely to change. Wherever possible in these arrangements, you should try and use a CNAME record. Only use A records at the root, or where you are also managing the IP addresses and thus will know if they ever need to change.
+For this reason, services like Heroku and AppHarbor also publish a set of known IPs which are unlikely to change.
+
+Wherever possible in these arrangements, you should try and use a CNAME record. Only use A records at the root, or where you are also managing the IP addresses and thus will know if they ever need to change.
 
 Of course, if you're still managing IP addresses, you probably want to take a moment to step back and ask yourself why you're clutching on to the '90s so tightly. Owning your own hardware? How quaint.
 

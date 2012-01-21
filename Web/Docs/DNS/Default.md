@@ -87,6 +87,8 @@ Wherever possible in these arrangements, you should try and use a CNAME record. 
 
 Of course, if you're still managing IP addresses, you probably want to take a moment to step back and ask yourself why you're clutching on to the '90s so tightly. Owning your own hardware? How quaint.
 
+## Zone Files
+
 ## Recursion
 
 <aside>

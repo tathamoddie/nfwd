@@ -83,9 +83,30 @@ It's not all peachy though; there's a major restriction applied to CNAME records
 
 For this reason, services like Heroku and AppHarbor also publish a set of known IPs which are unlikely to change.
 
-Wherever possible in these arrangements, you should try and use a CNAME record. Only use A records at the root, or where you are also managing the IP addresses and thus will know if they ever need to change.
+Wherever possible in these arrangements, you should try and use a CNAME record. Only use A records at the root, or where you are also managing the IP addresses and thus will know if they ever need to change. Of course, if you're still managing IP addresses, you probably want to take a moment to step back and ask yourself why you're clutching on to the '90s so tightly. Owning your own hardware? How quaint.
 
-Of course, if you're still managing IP addresses, you probably want to take a moment to step back and ask yourself why you're clutching on to the '90s so tightly. Owning your own hardware? How quaint.
+There's a common minconception that CNAMEs are slower because they require an extra hop: you need to lookup the CNAME, then follow it to the next hostname. While this is technically true, the extra hop is actually taken care of by the server and then cached. The end result is that after the first query, they should be just as fast to query as A records.
+
+You can test this behaviour by clearing your query type:
+
+    > set type=
+
+... then rerunning our last query:
+
+    > longitude.tath.am
+    Server:  router
+    Address:  10.0.0.1
+    
+    Non-authoritative answer:
+    Name:    proxy.heroku.com
+    Addresses:  50.16.215.41
+              174.129.20.208
+              174.129.22.35
+              107.22.234.17
+    Aliases:  longitude.tath.am
+              longitude.heroku.com
+
+We can see that the server has unrolled the CNAME for us in a single call. In fact, it unrolled two of them because `longitude.heroku.com` is actually another CNAME to `proxy.heroku.com`.
 
 ## Zone Files
 

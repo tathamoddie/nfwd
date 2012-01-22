@@ -131,4 +131,12 @@ Prior to DNS being invented, a single computer was used to host a file called `H
     isp->router: qak
     router->pc: baz
 
+## TTL
+
+## SOA
+
 ## Round Robin
+
+## AAAA
+
+## Reserved TLDs (RFC 2606)

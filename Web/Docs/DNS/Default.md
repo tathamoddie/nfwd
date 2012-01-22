@@ -63,7 +63,7 @@ Then, run another query for `github.com`:
 
 Here we can see that there are five different hostnames that GitHub are happy for you to deliver email to, each of equal priority.
 
-Let's not dwell on mail servers for too long though. Any mail provider you choose will give you clear instructions about what records you'll need in place.
+Let's not dwell on mail servers for too long though. Any mail provider you choose will give you clear instructions about what records you'll need in place. Now that we understand the idea of different record types, we can take a look at the more interesting ones.
 
 ### Canonical Names (CNAME)
 

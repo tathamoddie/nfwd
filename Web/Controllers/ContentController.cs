@@ -35,6 +35,7 @@ namespace Web.Controllers
         }
 
         static readonly Regex CodeHighlightRegex = new Regex(@"(?s:(?<=<code>)@@highlight\s(?<highlightOptions>.*?)\n(?<code>.*?)(?=</code>))");
+        static readonly Regex SequenceDiagramRegex = new Regex(@"(?s:<pre><code>@@sequence(?<sequenceContent>.*)</code></pre>)");
         static HtmlString ProcessContent(string fileContent)
         {
             var content = new Markdown().Transform(fileContent);
@@ -53,6 +54,16 @@ namespace Web.Controllers
                 }
                 return string.Join(Environment.NewLine, codeLines);
             });
+
+            var contentIncludesASequenceDiagram = false;
+            content = SequenceDiagramRegex.Replace(content, match =>
+            {
+                contentIncludesASequenceDiagram = true;
+                var sequenceContent = match.Groups["sequenceContent"].Value;
+                return string.Format("<div class=\"wsd\">{0}</div>", sequenceContent);
+            });
+            if (contentIncludesASequenceDiagram)
+                content += "\r\n<script type=\"text/javascript\" src=\"http://www.websequencediagrams.com/service.js\" async></script>";
 
             return new HtmlString(content);
         }

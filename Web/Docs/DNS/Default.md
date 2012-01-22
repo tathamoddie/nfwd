@@ -115,12 +115,20 @@ You can test this behaviour by clearing your query type:
 
 We can see that the server has unrolled the CNAME for us in a single call. In fact, it unrolled two of them because `longitude.heroku.com` is actually another CNAME to `proxy.heroku.com`.
 
-## Zone Files
-
 ## Recursion
 
 <aside>
 Prior to DNS being invented, a single computer was used to host a file called `HOSTS.TXT`. This contained *every* hostname on the internet, with updates distributed via FTP.
 </aside>
+
+    @@sequence
+    pc->router: foo
+    router->isp: bar
+    isp->root: baz
+    root->isp: qak
+    isp->ns1: bar
+    ns1->isp: baz
+    isp->router: qak
+    router->pc: baz
 
 ## Round Robin

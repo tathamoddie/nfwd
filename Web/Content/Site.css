@@ -78,6 +78,15 @@ pre {
     opacity: 1.0;
 }
 
+.page-content .wsd {
+    clear: left;
+}
+
+.page-content .wsd img {
+    clear: left;
+    max-width: 100%;
+}
+
 @media (max-width: 40em) {
     .page-content aside {
         margin-right: 0;

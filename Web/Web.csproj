@@ -110,6 +110,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Docs\dns\Default.md" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\jquery-1.6.2-vsdoc.js" />
@@ -150,9 +151,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Layout\Footer.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Docs\DNS\Default.md" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

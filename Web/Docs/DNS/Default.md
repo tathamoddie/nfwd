@@ -10,6 +10,7 @@ Generally, it's the last piece of the deployment puzzle before you can finally s
 
 To query DNS, there's a useful command line tool on both Windows and UNIX called `nslookup`. Launching it without any arguments results in an interactive prompt of its own:
 
+    @@highlight 1
     C:\> nslookup
     Default Server:  router
     Address:  10.0.0.1
@@ -18,6 +19,7 @@ To query DNS, there's a useful command line tool on both Windows and UNIX called
 
 Try typing `github.com` at this new prompt and you'll see something like this:
 
+    @@highlight 1
     > github.com
     Server:  router
     Address:  10.0.0.1
@@ -42,10 +44,12 @@ If we were trying to deliver email to GitHub, we'd need to ask for their *MX (ma
 
 Configure `nslookup` to query for MX records:
 
+    @@highlight 1
     > set type=MX
 
 Then, run another query for `github.com`:
     
+    @@highlight 1
     > github.com
     Server:  router
     Address:  10.0.0.1
@@ -67,6 +71,7 @@ As a web developer, it's likely that you've seen or heard the term *CNAME* befor
 
 Try this lookup:
 
+    @@highlight 1,2
     > set type=CNAME
     > longitude.tath.am
     Server:  router
@@ -89,10 +94,12 @@ There's a common minconception that CNAMEs are slower because they require an ex
 
 You can test this behaviour by clearing your query type:
 
+    @@highlight 1
     > set type=
 
 ... then rerunning our last query:
 
+    @@highlight 1
     > longitude.tath.am
     Server:  router
     Address:  10.0.0.1

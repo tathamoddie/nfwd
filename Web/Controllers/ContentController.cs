@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
@@ -23,7 +24,7 @@ namespace Web.Controllers
             Response.AddHeader("X-File-Path", filePath);
 
             var fileContent = IOFile.ReadAllText(filePath);
-            ViewBag.PageContent = new HtmlString(new Markdown().Transform(fileContent));
+            ViewBag.PageContent = ProcessContent(fileContent);
 
             var heading1 = Heading1Regex.Match(fileContent);
             ViewBag.Title = heading1.Success ? heading1.Value : "";
@@ -31,6 +32,29 @@ namespace Web.Controllers
             ViewBag.GitHubEditLink = ResolveGitHubEditLink(docsFolderPath, filePath);
 
             return View();
+        }
+
+        static readonly Regex CodeHighlightRegex = new Regex(@"(?s:(?<=<code>)@@highlight\s(?<highlightOptions>.*?)\n(?<code>.*?)(?=</code>))");
+        static HtmlString ProcessContent(string fileContent)
+        {
+            var content = new Markdown().Transform(fileContent);
+
+            content = CodeHighlightRegex.Replace(content, match =>
+            {
+                var highlightOptions = match.Groups["highlightOptions"].Value;
+                var linesToHighlight = highlightOptions.Split(',').Select(int.Parse);
+                var codeLines = match.Groups["code"].Value.Split('\n');
+                foreach (var lineNumber in linesToHighlight)
+                {
+                    var lineIndex = lineNumber - 1;
+                    if (lineIndex < 0) throw new ArgumentException(string.Format("Tried to highlight a line with index less than 0. The full code block was:\r\n\r\n{0}", match.Value));
+                    if (lineIndex > codeLines.Count() - 1) throw new ArgumentException(string.Format("Tried to highlight a line with index {0}, which doesn't exist. The full code block was:\r\n\r\n{1}", codeLines.Count(), match.Value));
+                    codeLines[lineIndex] = string.Format("<strong>{0}</strong>", codeLines[lineIndex]);
+                }
+                return string.Join(Environment.NewLine, codeLines);
+            });
+
+            return new HtmlString(content);
         }
 
         string ResolveFilePath(string docsFolderPath, string path)
